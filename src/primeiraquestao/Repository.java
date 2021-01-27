@@ -5,8 +5,6 @@
  */
 package primeiraquestao;
 
-import java.util.ArrayList;
-
 /**
  *
  * @author Rennan
@@ -15,27 +13,17 @@ public class Repository {
     
     Fare fare = new Fare();
     Operator operator = new Operator();
-    
-    ArrayList<Fare> Lista = new ArrayList();
         
     public void insert (double valor, String operador){
-        if(!operator.getCode().equalsIgnoreCase(operador)) {
+       if(operator.getCode().equalsIgnoreCase(operador) 
+                && fare.getValue() == valor) {
+                System.out.println("Operador já possui tarifa cadastrada!");
+        } else {
             operator.setCode(operador);
             fare.setOperatorId(operador);
             fare.setValue(valor);
             fare.setStatus(1);
-            //Lista.add(0,);
             System.out.println("Tarifa cadastrada com sucesso!");
-        } else if(operator.getCode().equalsIgnoreCase(operador) && 
-                operador.equalsIgnoreCase(fare.getOperatorId())){
-            if(fare.getStatus() == 1) {
-                System.out.println("Operador já possui tarifa cadastrada!");
-            }
-        }
+       }
     }
-    
-    public void update (){
-        
-    }
-    
 }

@@ -5,26 +5,18 @@
  */
 package primeiraquestao;
 
-import java.util.HashSet;
 import java.util.Scanner;
-import java.util.Set;
 
 /**
  *
  * @author Rennan
  */
 public class PrimeiraQuestao {
-
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
         
         double valor;
         String operador;
-        
-        Fare fare = new Fare();
-        Operator operator = new Operator();
+
         Repository repo = new Repository();
         
         Scanner scanner = new Scanner(System.in);
@@ -37,7 +29,5 @@ public class PrimeiraQuestao {
         operador = scanner.next();
         
         repo.insert(valor, operador);
-        
     }
-    
 }
